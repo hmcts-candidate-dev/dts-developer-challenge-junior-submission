@@ -84,7 +84,7 @@ npm run build-schema
 npm run dev
 
 Health check
-GET http://localhost:3000/health
+ http://localhost:3000/health
 
 Expected
 { "status": "ok" }
