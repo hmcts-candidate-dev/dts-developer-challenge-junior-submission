@@ -1,0 +1,40 @@
+{
+  "name": "hmcts-task-api",
+  "version": "1.0.0",
+  "description": "Backend API for creating HMCTS caseworker tasks",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "NODE_ENV=test jest --runInBand",
+    "setup-dbs": "psql -f ./db/setup.sql",
+    "build-schema": "psql -d hmcts_tasks -f ./db/schema.sql",
+    "build-test-schema": "psql -d hmcts_tasks_test -f ./db/schema.sql"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cosmas-ogo/hmcts-task-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Cosmas-ogo/hmcts-task-api/issues"
+  },
+  "homepage": "https://github.com/Cosmas-ogo/hmcts-task-api#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.11",
+    "supertest": "^7.1.4"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
