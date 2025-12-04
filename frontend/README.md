@@ -1,43 +1,27 @@
-# HMCTS Task UI — Task Creation Frontend
+# HMCTS Task UI (Frontend)
 
-The **HMCTS Task UI** is a lightweight React frontend built to complement the HMCTS Task API.  
-It provides caseworkers with a simple, clear, and accessible interface for creating new tasks.
-
-This application submits task data to the backend (`hmcts-task-api`), validates the user's input via backend responses, and displays a confirmation panel showing the successfully created task.
-
-The UI is designed to be minimal, responsive, and user-friendly, with a centered form layout and clear visual feedback.
+This is a simple React-based user interface for creating caseworker tasks as part of the HMCTS DTS Junior Developer coding challenge.  
+It provides a form for submitting task details to the backend API and displays validation errors or a success confirmation.
 
 ---
 
-## ✨ Features
+## Features
 
-- **Task creation form** with:
-  - Title (required)
-  - Description (optional)
-  - Status dropdown (`OPEN`, `IN_PROGRESS`, `COMPLETED`)
-  - Due Date/Time (required, uses native datetime picker)
-- **Inline form validation** from backend responses
-- **Success panel** showing created task details
-- **Error panel** showing list of validation issues
-- **Responsive layout**, centered card UI with predictable spacing
-- **Environment-based configuration** for backend API URL
-
----
-
-## 🧱 Tech Stack
-
-- **React** (via Vite)
-- **JavaScript / JSX**
-- **Fetch API** for backend communication
-- **Vite environment variables** (`VITE_` prefix)
-- **CSS (lightweight custom styles)**
+- Form for creating tasks:
+  - `title` (required)
+  - `description` (optional)
+  - `status` (`OPEN`, `IN_PROGRESS`, `COMPLETED`)
+  - `dueDateTime` (ISO 8601)
+- Displays backend validation errors
+- Shows created task details on success
+- Minimal, responsive layout
+- Environment-based configuration for API URL
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
-hmcts-task-ui/
-│
+frontend/
 ├── src/
 │ ├── App.jsx
 │ ├── main.jsx
@@ -47,44 +31,32 @@ hmcts-task-ui/
 │ └── TaskForm.jsx
 │
 ├── public/
-├── .env
-├── .gitignore
+├── .env.example
 ├── package.json
 └── README.md
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
-### Prerequisites
-
-- Node.js 18+
-- npm 9+
-- Backend API (`hmcts-task-api`) running locally on port 3000
-
----
-
-## 1️⃣ Clone the Repository
-
-```bash
-git clone https://github.com/Cosmas-ogo/hmcts-task-ui.git
-cd hmcts-task-ui
-
-
-## 2 Install Dependencies
+### 1. Install dependencies
 
 npm install
 
+### 2. Configure environment variables
 
-## 3 Create .env and add
-
+Create a .env file based on .env.example
 VITE_API_BASE_URL=http://localhost:3000/api
 
+### 3. Ensure the backend is running
 
-## 4 Start the Frontend
+The frontend requires the accompanying backend API to be running locally.
+Start the backend in a separate terminal:
+npm run dev
+
+### 4. Run the Frontend development server
 
 npm run dev
-Vite will display a local development URL, typically:
+
+Open the printed local URL (typically)
 http://localhost:5173
-Open it in your browser.
-```
